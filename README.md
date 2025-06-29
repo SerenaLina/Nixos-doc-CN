@@ -1,4 +1,4 @@
-## **引言（Introduction）**
+### **引言（Introduction）**
 
 Nix 是一个纯函数式的软件包管理器。  
 这意味着它像 Haskell 这样的纯函数式编程语言一样处理软件包 —— 软件包是通过没有副作用的函数构建的，并且在构建完成之后永远不会改变。
@@ -39,7 +39,7 @@ Nix 可以帮助你确保软件包依赖关系的声明是完整的。
 
 一旦软件包构建完成，Nix 会通过扫描二进制文件中 Nix 存储路径的哈希部分（例如 `r8vvq9kq...`）来找到其运行时依赖。  
 这听起来似乎不安全，但实际上运作得非常好。
-### **多用户支持（Multi-user support）**
+#### **多用户支持（Multi-user support）**
 
 Nix 支持**多用户模式**。  
 这意味着**非特权用户**（即普通用户）也可以**安全地安装软件**。每个用户可以拥有不同的“配置文件”（profile），也就是一组在 Nix 存储区中安装的软件包，这些软件包会出现在该用户的 `PATH` 环境变量中。
@@ -50,7 +50,7 @@ Nix 支持**多用户模式**。
 
 ---
 
-### **原子升级与回滚（Atomic upgrades and rollbacks）**
+#### **原子升级与回滚（Atomic upgrades and rollbacks）**
 
 由于在 Nix 中，软件包管理操作**不会覆盖 Nix 存储区中的现有包**，而是将新版本放入不同的路径中，这就使得操作具备**原子性**。
 
@@ -63,7 +63,7 @@ Nix 支持**多用户模式**。
 
 ---
 
-### **垃圾回收（Garbage collection）**
+#### **垃圾回收（Garbage collection）**
 
 当你像这样卸载一个软件包时：
 
@@ -85,7 +85,7 @@ Nix 支持**多用户模式**。
 
 ---
 
-### **函数式软件包语言（Functional package language）**
+#### **函数式软件包语言（Functional package language）**
 
 Nix 中的软件包是通过 **Nix 表达式** 构建的，Nix 表达式是一种简单的**函数式语言**。  
 一个 Nix 表达式描述了构建软件包所需的所有信息（称为“**导出对象** derivation”）：包括其它依赖软件包、源码、构建脚本、构建时所需的环境变量等。
@@ -99,7 +99,7 @@ Nix 极力保证构建的**确定性**：
 
 ---
 
-### **透明的源码/二进制部署（Transparent source/binary deployment）**
+#### **透明的源码/二进制部署（Transparent source/binary deployment）**
 
 通常，Nix 表达式描述的是如何从源码构建一个软件包。  
 因此，当你执行以下命令时：
@@ -133,14 +133,14 @@ https://cache.nixos.org/b6gvzjyb2pg0….narinfo
 
 ---
 
-### **Nix 软件包集合（Nix Packages collection）**
+#### **Nix 软件包集合（Nix Packages collection）**
 
 我们提供了大量的 Nix 表达式，包含了数百个现有的 Unix 软件包，  
 这个集合被称为 **Nix Packages Collection（Nixpkgs）**。
 
 ---
 
-### **构建环境管理（Managing build environments）**
+#### **构建环境管理（Managing build environments）**
 
 Nix 对开发者来说非常有用，它能非常方便地**自动设置软件包的构建环境**。
 
@@ -157,7 +157,7 @@ $ nix-shell
 
 ---
 
-### **构建环境管理 示例（Managing build environments - Example）**
+#### **构建环境管理 示例（Managing build environments - Example）**
 
 例如，下面这个命令会获取 Pan 新闻阅读器（newsreader）的所有依赖项，这些依赖项在它的 Nix 表达式中有定义：
 
@@ -179,13 +179,13 @@ $ nix-shell '<nixpkgs>' --attr pan
 
 ---
 
-### **可移植性（Portability）**
+#### **可移植性（Portability）**
 
 Nix 可运行于 **Linux** 和 **macOS**。
 
 ---
 
-### **NixOS**
+#### **NixOS**
 
 **NixOS** 是一个基于 Nix 的 Linux 发行版。  
 它不仅使用 Nix 来进行软件包管理，还用来管理系统配置（例如构建 `/etc` 目录中的配置文件）。
@@ -201,7 +201,7 @@ Nix 可运行于 **Linux** 和 **macOS**。
 
 ---
 
-### **许可证（License）**
+#### **许可证（License）**
 
 Nix 在 **GNU LGPLv2.1** 或（你可以选择）**任何更高版本**的条款下发布。
 
